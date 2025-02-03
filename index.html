@@ -3,264 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Visa Assessment</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            background: #f0f2f5;
-            color: #333;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1565C0, #26C6DA);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        /* Form Styles */
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        button {
-            background: #1565C0;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-        }
-
-        button:hover {
-            background: #1976D2;
-        }
-
-        /* Results */
-        .result-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #f0f0f0;
-            margin: 1rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #1565C0;
-        }
-
-        .requirements-list {
-            list-style: none;
-        }
-
-        .requirements-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: white;
-            margin-top: 2rem;
-        }
-    </style>
+    <title>VisaPro - Global Visa Success Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
-        <h1>VisaPro Assessment</h1>
-        <p>Calculate your visa success rate</p>
+        <div class="header-content">
+            <div class="brand">
+                <div class="logo">
+                    <div class="logo-squares">
+                        <div class="square deep-blue"></div>
+                        <div class="square light-blue"></div>
+                        <div class="square turquoise"></div>
+                        <div class="square sky-blue"></div>
+                    </div>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">VisaPro</span>
+                    <span class="brand-title">Global Visa Success Assistant</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active" id="homeLink">
+                    <i class="icon">🏠</i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-link" id="successRatesLink">
+                    <i class="icon">📈</i>
+                    <span>Success Rates</span>
+                </a>
+                <a href="#contactSection" class="nav-link" id="supportLink">
+                    <i class="icon">🎧</i>
+                    <span>Support</span>
+                </a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="card">
-            <form id="visaForm">
-                <div class="form-group">
-                    <label>🌍 Destination Country</label>
-                    <select id="country" required>
-                        <option value="">Select Country</option>
-                        <option value="USA">United States</option>
-                        <option value="UK">United Kingdom</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Australia">Australia</option>
-                    </select>
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="grid-container">
+            <!-- Assessment Form Card -->
+            <section class="card assessment-card">
+                <div class="card-header">
+                    <i class="icon">🛂</i>
+                    <h2>Visa Assessment</h2>
                 </div>
+                <form id="visaForm">
+                    <!-- Country Selection -->
+                    <div class="form-group">
+                        <label>
+                            <i class="icon">🌍</i>
+                            Destination Country
+                        </label>
+                        <select id="countrySelect" required>
+                            <option value="">Select Country</option>
+                            <!-- North America -->
+                            <optgroup label="North America">
+                                <option value="USA">United States</option>
+                                <option value="Canada">Canada</option>
+                            </optgroup>
+                            <!-- Europe -->
+                            <optgroup label="Europe">
+                                <option value="UK">United Kingdom</option>
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Denmark">Denmark</option>
+                            </optgroup>
+                            <!-- Asia -->
+                            <optgroup label="Asia">
+                                <option value="Japan">Japan</option>
+                                <option value="China">China</option>
+                            </optgroup>
+                            <!-- Middle East -->
+                            <optgroup label="Middle East">
+                                <option value="UAE">United Arab Emirates</option>
+                            </optgroup>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label>✈️ Visa Type</label>
-                    <select id="visaType" required>
-                        <option value="">Select Type</option>
-                        <option value="tourist">Tourist</option>
-                        <option value="business">Business</option>
-                        <option value="student">Student</option>
-                        <option value="work">Work</option>
-                    </select>
+                    <!-- Visa Type -->
+                    <div class="form-group">
+                        <label>
+                            <i class="icon">✈️</i>
+                            Visa Type
+                        </label>
+                        <select id="visaType" required>
+                            <option value="">Select Type</option>
+                            <option value="Tourist">Tourist/Visitor</option>
+                            <option value="Business">Business</option>
+                            <option value="Student">Student</option>
+                            <option value="Work">Work</option>
+                            <option value="Family">Family/Dependent</option>
+                        </select>
+                    </div>
+
+                    <!-- Travel History -->
+                    <div class="form-group">
+                        <label>
+                            <i class="icon">🗺️</i>
+                            Travel History
+                        </label>
+                        <select id="travelHistory" required>
+                            <option value="">Select History</option>
+                            <option value="Frequent">Frequent Traveler</option>
+                            <option value="Moderate">Moderate Travel</option>
+                            <option value="Limited">Limited Travel</option>
+                            <option value="None">No Travel History</option>
+                        </select>
+                    </div>
+
+                    <!-- Sponsorship -->
+                    <div class="form-group">
+                        <label>
+                            <i class="icon">📋</i>
+                            Sponsorship
+                        </label>
+                        <select id="sponsorship" required>
+                            <option value="">Select Sponsorship</option>
+                            <option value="Government">Government</option>
+                            <option value="Company">Company</option>
+                            <option value="Family">Family</option>
+                            <option value="Self">Self-Sponsored</option>
+                        </select>
+                    </div>
+
+                    <!-- Monthly Income -->
+                    <div class="form-group">
+                        <label>
+                            <i class="icon">💰</i>
+                            Monthly Income (USD)
+                        </label>
+                        <select id="income" required>
+                            <option value="">Select Range</option>
+                            <option value="high">$1000 and above</option>
+                            <option value="medium">$600 - $999</option>
+                            <option value="low">Below $500</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">
+                        <i class="icon">📊</i>
+                        Calculate Success Rate
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Card -->
+            <section class="card results-card">
+                <div class="card-header">
+                    <i class="icon">📊</i>
+                    <h2>Your Results</h2>
                 </div>
-
-                <div class="form-group">
-                    <label>🗺️ Travel History</label>
-                    <select id="travelHistory" required>
-                        <option value="">Select History</option>
-                        <option value="frequent">Frequent Traveler</option>
-                        <option value="moderate">Moderate Travel</option>
-                        <option value="limited">Limited Travel</option>
-                        <option value="none">No Travel History</option>
-                    </select>
+                <div class="results-content">
+                    <div class="progress-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="result-message">
+                        Complete the assessment form
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <i class="icon">📈</i>
+                            Success Rate: <span id="successRate">-</span>
+                        </div>
+                    </div>
+                    <div id="premiumSection" class="premium-section hidden">
+                        <h3>Premium Consultation</h3>
+                        <p>Enhance your visa success rate with expert guidance</p>
+                        <button class="premium-btn">
+                            <i class="icon">⭐</i>
+                            Get Premium Support
+                        </button>
+                    </div>
                 </div>
+            </section>
 
-                <button type="submit">Calculate Success Rate</button>
-            </form>
+            <!-- Requirements Card -->
+            <section class="card requirements-card">
+                <div class="card-header">
+                    <i class="icon">📋</i>
+                    <h2>Requirements & Information</h2>
+                </div>
+                <div class="requirements-content">
+                    <ul id="requirementsList" class="requirements-list">
+                        <!-- Populated by JavaScript -->
+                    </ul>
+                    <div class="embassy-section">
+                        <h3>Official Resources</h3>
+                        <div class="embassy-buttons">
+                            <a href="#" id="embassyLink" class="embassy-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="icon">🏛️</i>
+                                Embassy Website
+                            </a>
+                            <a href="#" id="appointmentLink" class="embassy-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="icon">📅</i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <div class="card" id="results" style="display: none;">
-            <h2>Your Results</h2>
-            <div class="result-circle">
-                <span id="scoreDisplay">0%</span>
+    <!-- Footer Section -->
+    <footer class="footer-section" id="contactSection">
+        <!-- Disclaimer Banner -->
+        <div class="disclaimer-banner">
+            <div class="container">
+                <div class="disclaimer-content">
+                    <i class="icon">⚠️</i>
+                    <p><strong>Disclaimer:</strong> This visa success calculator provides estimates based on general criteria. Results are not guaranteed and should not be considered as official visa advice. Always consult with the respective embassy or a qualified immigration consultant for accurate information.</p>
+                </div>
             </div>
-            <div id="requirementsList" class="requirements-list"></div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <p>© 2024 VisaPro Assessment. For educational purposes only.</p>
+        <!-- Contact Information -->
+        <div class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Company Info -->
+                    <div class="contact-block">
+                        <h3><i class="icon">🏢</i> Corporate Office</h3>
+                        <ul>
+                            <li><strong>VisaPro Global Services</strong></li>
+                            <li>Valley View</li>
+                            <li>Accra, Ghana</li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="contact-block">
+                        <h3><i class="icon">📞</i> Contact Details</h3>
+                        <ul>
+                            <li><strong>Support Email:</strong>
+                                <span class="email-display">support@ogroups.net</span>
+                            </li>
+                            <li><strong>Business Hours:</strong> 24/7 Support</li>
+                            <li><strong>Response Time:</strong> Within 24 Hours</li>
+                            <li><strong>Languages:</strong> English, Arabic</li>
+                        </ul>
+                    </div>
+
+                    <!-- Support Hours -->
+                    <div class="contact-block">
+                        <h3><i class="icon">🌐</i> Global Support</h3>
+                        <ul>
+                            <li><strong>UAE:</strong> 9 AM - 6 PM GST</li>
+                            <li><strong>Europe:</strong> 8 AM - 5 PM CET</li>
+                            <li><strong>Asia:</strong> 9 AM - 6 PM SGT</li>
+                            <li><strong>USA:</strong> 9 AM - 6 PM EST</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <p>© 2024 VisaPro Global Services. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Simple country data
-        const countryData = {
-            'USA': {
-                requirements: [
-                    'Valid Passport (6 months validity)',
-                    'Completed DS-160 Form',
-                    'Bank Statements',
-                    'Employment Letter'
-                ],
-                baseRate: 65
-            },
-            'UK': {
-                requirements: [
-                    'Valid Passport (6 months validity)',
-                    'Bank Statements',
-                    'Accommodation Proof',
-                    'Travel Insurance'
-                ],
-                baseRate: 70
-            },
-            'Canada': {
-                requirements: [
-                    'Valid Passport (6 months validity)',
-                    'Proof of Funds',
-                    'Travel History',
-                    'Letter of Invitation'
-                ],
-                baseRate: 75
-            },
-            'Australia': {
-                requirements: [
-                    'Valid Passport (6 months validity)',
-                    'Bank Statements',
-                    'Travel Insurance',
-                    'Health Check'
-                ],
-                baseRate: 70
-            }
-        };
-
-        // Form handling
-        document.getElementById('visaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const country = document.getElementById('country').value;
-            const visaType = document.getElementById('visaType').value;
-            const travelHistory = document.getElementById('travelHistory').value;
-
-            if (country && visaType && travelHistory) {
-                const score = calculateScore(country, visaType, travelHistory);
-                displayResults(country, score);
-            }
-        });
-
-        function calculateScore(country, visaType, travelHistory) {
-            let score = countryData[country].baseRate;
-
-            // Visa type modifiers
-            const visaModifiers = {
-                'tourist': 5,
-                'business': 10,
-                'student': 0,
-                'work': -5
-            };
-
-            // Travel history modifiers
-            const travelModifiers = {
-                'frequent': 15,
-                'moderate': 10,
-                'limited': 5,
-                'none': -5
-            };
-
-            score += visaModifiers[visaType] || 0;
-            score += travelModifiers[travelHistory] || 0;
-
-            return Math.min(Math.max(score, 0), 100);
-        }
-
-        function displayResults(country, score) {
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('scoreDisplay').textContent = `${score}%`;
-
-            const requirementsList = document.getElementById('requirementsList');
-            requirementsList.innerHTML = '<h3>Requirements:</h3>';
-
-            countryData[country].requirements.forEach(req => {
-                requirementsList.innerHTML += `<li>✓ ${req}</li>`;
-            });
-
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
